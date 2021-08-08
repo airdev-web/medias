@@ -16,8 +16,9 @@ Next, add it to the Laravel's package providers in ``config/app.php``
 Airdev\Medias\AirdevMediasProvider::class,
 ```
 
-You'll need then to install the required table for the database
+Publish migrations, configure it if needed, the migrate.
 ```shell
+php artisan vendor:publish --tag=airdev-medias-migrations
 php artisan migrate
 ```
 
