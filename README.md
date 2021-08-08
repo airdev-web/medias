@@ -13,7 +13,7 @@ Next, add it to the Laravel's package providers in ``config/app.php``
 /*
  * Package Service Providers...
  */
-Airdev\Contact\AirdevMediasProvider::class,
+Airdev\Medias\AirdevMediasProvider::class,
 ```
 
 You'll need then to install the required table for the database
