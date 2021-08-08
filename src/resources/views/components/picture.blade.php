@@ -6,6 +6,7 @@
             <source type="image/webp" srcset="{{ $srcset_webp_responsive }}">
         @endif
 
-        <img srcset="{{ $srcset_original_responsive }}" src="{{ $src_original }}" {{ $img_class != null ? 'class='.$img_class : '' }}>
+        <img srcset="{{ $srcset_original_responsive }}"
+             src="{{ $src_original }}" {{ $img_class != null ? 'class='.$img_class : '' }}>
     </picture>
 @endif

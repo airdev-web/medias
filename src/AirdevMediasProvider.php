@@ -36,7 +36,7 @@ class AirdevMediasProvider extends ServiceProvider
             __DIR__ . '/Database/Migrations/' => database_path('migrations')
         ], 'airdev-medias-migrations');
 
-        $this->loadViewsFrom(__DIR__ . '/resources/views', 'airdev-medias');
         Blade::componentNamespace('Airdev\\Medias\\App\\Views\\Components', 'airdev');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'airdev-medias');
     }
 }
