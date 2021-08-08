@@ -19,6 +19,6 @@ class CreateTableAirdevMedias extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('web_medias');
+        Schema::dropIfExists('airdev_medias');
     }
 }
