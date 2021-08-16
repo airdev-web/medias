@@ -51,7 +51,7 @@ class AirdevMedia extends Model implements HasMedia
         $airev_media = AirdevMedia::where('alt', $slug)->first();
 
         if ($airev_media == null) {
-            throw new \Exception('Unknow media '.$slug);
+            return null;
         }
 
         return $airev_media->getFirstMedia('airdev_media');

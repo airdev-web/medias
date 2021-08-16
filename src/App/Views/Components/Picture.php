@@ -31,12 +31,18 @@ class Picture extends Component
             return;
 
         $this->slug = $slug;
-        $this->media = AirdevMedia::get($this->slug);
         $this->img_class = $class;
 
-        $this->src_original = $this->media->getUrl();
-        $this->srcset_original_responsive = $this->get_srcset($this->media, 'responsive');
-        $this->srcset_webp_responsive = $this->get_srcset($this->media, 'responsive_webp');
+        $this->media = AirdevMedia::get($this->slug);
+
+        if ($this->media == null) {
+            $this->src_original = 'https://airdev.be/no-img.jpg';
+        } else {
+            $this->src_original = $this->media->getUrl();
+            $this->srcset_original_responsive = $this->get_srcset($this->media, 'responsive');
+            $this->srcset_webp_responsive = $this->get_srcset($this->media, 'responsive_webp');
+        }
+
     }
 
     public function get_srcset(Media $media, $conversion_name)
@@ -66,6 +72,6 @@ class Picture extends Component
      */
     public function render()
     {
-        return view('airdev-medias::components.picture');
+        return view('airdev::components.picture');
     }
 }
