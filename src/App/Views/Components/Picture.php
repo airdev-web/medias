@@ -25,15 +25,16 @@ class Picture extends Component
      *
      * @return void
      */
-    public function __construct($slug = null, $class = null)
+    public function __construct($slug = null, $class = null, $media = null)
     {
-        if ($slug === null)
-            return;
-
         $this->slug = $slug;
         $this->img_class = $class;
 
-        $this->media = AirdevMedia::get($this->slug);
+        if ($media == null) {
+            $this->media = AirdevMedia::get($this->slug);
+        } else {
+            $this->media = $media;
+        }
 
         if ($this->media == null) {
             $this->src_original = 'https://airdev.be/no-img.jpg';
@@ -42,7 +43,6 @@ class Picture extends Component
             $this->srcset_original_responsive = $this->get_srcset($this->media, 'responsive');
             $this->srcset_webp_responsive = $this->get_srcset($this->media, 'responsive_webp');
         }
-
     }
 
     public function get_srcset(Media $media, $conversion_name)

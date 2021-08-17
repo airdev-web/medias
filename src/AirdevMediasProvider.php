@@ -39,8 +39,6 @@ class AirdevMediasProvider extends ServiceProvider
         $this->loadViewComponentsAs('airdev', [
             Picture::class
         ]);
-
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'airdev');
-        Blade::componentNamespace('Airdev\\Medias\\App\\Views\\Components', 'airdev');
     }
 }

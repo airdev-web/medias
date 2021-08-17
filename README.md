@@ -28,12 +28,12 @@ You can now post image on Nova's Interface.
 ### Call the blade component into your view
 
 ```blade
-<x-airdev::picture slug="your-slug"></x-airdev::picture>
+<x-airdev-picture slug="your-slug"></x-airdev-picture>
 ```
 
 You can add a custom class to the generated image tag, or multiple class
 
 ```blade
-<x-airdev::picture slug="your-slug" class="img-fluid"></x-airdev::picture>
-<x-airdev::picture slug="your-slug" class="img-fluid my-second-class"></x-airdev::picture>
+<x-airdev-picture slug="your-slug" class="img-fluid"></x-airdev-picture>
+<x-airdev-picture slug="your-slug" class="img-fluid my-second-class"></x-airdev-picture>
 ```
